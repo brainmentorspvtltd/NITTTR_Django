@@ -1,0 +1,22 @@
+#header {
+    background-color: #2874F0;
+    display: flex;
+    /* to manage content from left & right */
+    justify-content: space-between;
+    /* to manage content from top & bottom */
+    align-items: center;
+}
+
+.logo {
+    width: 8%;
+}
+img {
+    width: 100%;
+}
+
+#search {
+    width: 50%;
+}
+#header input[type='text'] {
+    width: 80%;
+}
