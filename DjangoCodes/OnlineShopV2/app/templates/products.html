@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <section id="section_1">
+        <h2>Single Category Page</h2>
+        <hr>
+        <div class="row">
+            {% for p in products %}
+                <div class="col-md-4">
+                    <div class="card text-center" style="width: 18rem;">
+                        <img src="{{p.p_img}}" class="card-img-top w-100" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">{{p.p_name}}</h5>
+                          <p class="card-text">Price : {{p.p_price}} </p>
+                          <a href="#" class="btn btn-primary">Add to Cart</a>
+                        </div>
+                      </div>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}
