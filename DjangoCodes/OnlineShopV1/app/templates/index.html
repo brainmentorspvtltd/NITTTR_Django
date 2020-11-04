@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Online Shop Version 1.0</h1>
+
+    <ul>
+        {% for p in products %}
+            {% if p.price > 50000 %}
+                <li>
+                    <h3>Name : {{p.p_name}}</h3>
+                    <h4>Category : {{p.Category}}</h4>
+                    <h4>Price : {{p.price}} Rs</h4>
+                </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+    
+</body>
+</html>
