@@ -1,4 +1,4 @@
-"""OnlineShopV2 URL Configuration
+"""MovieApp URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.1/topics/http/urls/
@@ -19,7 +19,6 @@ from app import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('app', views.index, name='index'),
-    path('product/<int:pk>', views.product, name='product'),
-    path('search', views.search, name='search')
+    path('netflix',views.index, name='index'),
+    path('netflix/login', views.login, name='login')
 ]

@@ -20,3 +20,16 @@ def product(req,pk):
             if products[i]['p_category'] == 'mobile':
                 data.append(products[i])
     return render(req, 'products.html', {'products':data})
+
+def search(req):
+    product = req.GET['query']
+    product = product.lower()
+    # print("User want the data of",product)
+    data = []
+    for i in range(len(products)):
+        cond_1 = product in products[i]['p_name'].lower()
+        cond_2 = product in products[i]['p_brand'].lower()
+        cond_3 = product in products[i]['p_category'].lower()
+        if cond_1 or cond_2 or cond_3:
+            data.append(products[i])
+    return render(req, 'search.html', {'products':data})
