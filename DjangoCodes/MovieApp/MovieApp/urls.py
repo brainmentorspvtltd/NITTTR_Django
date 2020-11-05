@@ -22,5 +22,7 @@ urlpatterns = [
     path('netflix',views.index, name='index'),
     path('netflix/login', views.login, name='login'),
     path('netflix/register', views.register, name='register'),
-    path('netflix/register_user', views.register_user, name='register_user')
+    path('netflix/register_user', views.register_user, name='register_user'),
+    path('netflix/login_user', views.login_user, name='login_user'),
+    path('netflix/details/<int:pk>', views.details, name='details')
 ]

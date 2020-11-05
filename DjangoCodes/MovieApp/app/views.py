@@ -27,3 +27,21 @@ def register_user(req):
     query = "insert into viewers values ('{}', '{}', '{}')".format(name, email, pwd)
     cursor.execute(query)
     return render(req, 'index.html', {'name':name, 'movies':data})
+
+def login_user(req):
+    email = req.POST['u_email']
+    pwd = req.POST['u_pwd']
+    query = "select * from viewers where email = '{}' and password = '{}'".format(email,pwd)
+    cursor.execute(query)
+    user = cursor.fetchall()
+    if len(user) == 1:
+        name = user[0][0]
+    else:
+        name = "user not found..."
+    return render(req, 'index.html', {'name':name, 'movies':data})
+
+def details(req, pk):
+    query = "select * from movies where m_id = {}".format(pk)
+    cursor.execute(query)
+    movie = cursor.fetchall()
+    return render(req, 'details.html', context={'movie':movie})

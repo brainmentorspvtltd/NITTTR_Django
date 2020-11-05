@@ -39,7 +39,7 @@
           </ul>
           
           {% if name %}
-            <p>Welcome {{name}}</p>
+            <p style="color:white;" class="mr-3">Welcome {{name}}</p>
           {% else %}
             <a href="{% url 'login' %}" class="btn btn-primary mr-3">Login</a>
             <a href="{% url 'register' %}" class="btn btn-primary mr-3">Register</a>
