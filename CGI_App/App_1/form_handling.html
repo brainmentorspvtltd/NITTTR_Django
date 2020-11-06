@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <h1>Form Handling</h1>
+
+    <form action="cgi-bin/login.py" method="post">
+        <fieldset>
+            <legend>Login Form</legend>
+            <table>
+                <tr>
+                    <td>Enter Email ID</td>
+                    <td>
+                        <input type="email" placeholder="Enter Email" name="email">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Enter Password</td>
+                    <td>
+                        <input type="password" placeholder="Enter Password" name="pwd">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="reset">
+                    </td>
+                    <td>
+                        <input type="submit" value="Login">
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+    </form>
+
+    <hr>
+
+    <form action="cgi-bin/register.py" method="post">
+        <fieldset>
+            <legend>Registration Form</legend>
+            <table>
+                <tr>
+                    <td>Enter Email</td>
+                    <td>
+                        <input type="email" placeholder="Enter Email Id" name="email">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Enter Name</td>
+                    <td>
+                        <input type="text" placeholder="Enter Name" name="name">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Enter Password</td>
+                    <td>
+                        <input type="password" placeholder="Enter Password" name="pwd">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Choose Department</td>
+                    <td>
+                        <select name="dept">
+                            <option value="IT">IT</option>
+                            <option value="HR">HR</option>
+                            <option value="Sales">SALES</option>
+                            <option value="Marketing">MARKETING</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Choose Designation</td>
+                    <td>
+                        <select name="desig">
+                            <option value="Developer">Developer</option>
+                            <option value="Analyst">Analyst</option>
+                            <option value="Manager">Manager</option>
+                            <option value="Team Lead">Team Lead</option>
+                            <option value="Tester">Tester</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Enter Salary</td>
+                    <td>
+                        <input type="text" name="sal" placeholder="Enter Salary">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="reset">
+                    </td>
+                    <td>
+                        <input type="submit" value="Register Now">
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+    </form>
+
+</body>
+</html>

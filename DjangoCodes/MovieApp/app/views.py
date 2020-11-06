@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.http import JsonResponse
 import pymysql
 
 connection = pymysql.connect(host='localhost', user='root', port = 3306,
@@ -24,9 +25,30 @@ def register_user(req):
     name = req.POST['u_name']
     email = req.POST['u_email']
     pwd = req.POST['u_pwd']
-    query = "insert into viewers values ('{}', '{}', '{}')".format(name, email, pwd)
+
+    query = "select * from viewers where email = '{}'".format(email)
     cursor.execute(query)
-    return render(req, 'index.html', {'name':name, 'movies':data})
+    count = cursor.rowcount
+    if count > 0:
+        msg = "Email ID Already Exist"
+        return render(req, 'register.html', {'msg':msg})
+    else:
+        query = "insert into viewers values ('{}', '{}', '{}')".format(name, email, pwd)
+        cursor.execute(query)
+        return render(req, 'index.html', {'name':name, 'movies':data})
+
+def validate(req):
+    email = req.GET['u_email']
+
+    query = "select * from viewers where email = '{}'".format(email)
+    cursor.execute(query)
+    count = cursor.rowcount
+    if count > 0:
+        msg = "Email ID Already Exist"
+        return JsonResponse({'msg': msg})
+    else:
+        return JsonResponse({'msg':""})
+
 
 def login_user(req):
     email = req.POST['u_email']
